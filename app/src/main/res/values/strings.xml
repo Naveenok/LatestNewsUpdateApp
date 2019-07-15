@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Latest news update</string>
+    <string name="txtTitle">World Latest news</string>
+    <string name="titleDescription">choose your desired location, category and get the latest and breaking news!!!</string>
+    <string name="keywords">Enter the Keywords for search</string>
+    <string name="prompt">Selection of country</string>
+    <string name="btnMainpage">Proceed</string>
+    <string-array name="txtGroup">
+        <item>USA</item>
+        <item>India</item>
+        <item>China</item>
+        <item>Canada</item>
+        <item>Australia</item>
+    </string-array>
+</resources>
