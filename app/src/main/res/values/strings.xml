@@ -12,4 +12,19 @@
         <item>Canada</item>
         <item>Australia</item>
     </string-array>
+
+
+    <string name="txtSelectCategory">Select Category</string>
+
+    <string name="radBtnGeneral">General</string>
+    <string name="radBtnHealth">Health</string>
+    <string name="radBtnEntertainment">Entertainment</string>
+    <string name="radBtnSports">Sports</string>
+    <string name="radBtnScience">Science</string>
+    <string name="radBtnTech">Technology</string>
+    <string name="radBtnBusiness">Business</string>
+
+    <string name="btnProceed">Proceed</string>
+
+    <string name="txtNews">News</string>
 </resources>
