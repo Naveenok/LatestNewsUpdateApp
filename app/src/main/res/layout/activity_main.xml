@@ -32,7 +32,7 @@
         android:textSize="@dimen/txtSize" />
 
     <EditText
-        android:id="@+id/keywordInput"
+        android:id="@+id/txtKeyWord"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -42,7 +42,7 @@
         android:textSize="@dimen/txtSize" />
 
     <Spinner
-        android:id="@+id/txtGroup"
+        android:id="@+id/txtLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/txtGroup"
