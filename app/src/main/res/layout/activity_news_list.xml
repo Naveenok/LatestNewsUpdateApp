@@ -8,10 +8,9 @@
     tools:context=".NewsListActivity">
 
     <TextView
-        android:id="@+id/listNews"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/txtNews"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/txtSize25sp" />
+        android:id="@+id/txtTest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="TextView"
+        android:textSize="24sp" />
 </LinearLayout>
