@@ -1,4 +1,5 @@
 package com.naveen.latestnewsupdate;
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,41 +7,27 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class CategoryActivity extends AppCompatActivity {
 
     //change key to general value so that if not selected general value will be given as input
     //for example if no keyword given make keyword general or make null
 
-    public  static final String KEYWORDS_KEY = "KEYWORDS",LOCATION_KEY = "COUNTRY";
+    static final String KEYWORDS_KEY = "KEYWORDS",LOCATION_KEY = "COUNTRY";
     private String selectedLocation;
     private String givenKeyWords;
     private String selectedCategory;
-    public static String url;
+    static String url;
+    static int dataSize;
+    ArrayList<HashMap<String, String>> data = new ArrayList<HashMap<String, String>>();
+
 
     // creating que queue object
     private RequestQueue queue;
-
-
-
-
-
-
 
 
     @Override
@@ -72,15 +59,26 @@ public class CategoryActivity extends AppCompatActivity {
             final RadioButton radBtnTechnology = (RadioButton)findViewById(R.id.radBtnTecgnology);
 
 
-
             @Override
             public void onClick(View v) {
 
                 //checking which radio button is checked
                 if(radBtnGeneral.isChecked()){
-                    //get from request api and send data to news list
                     selectedCategory = "general";
+                } else if(radBtnBusiness.isChecked()){
+                    selectedCategory = "business";
+                } else if(radBtnEntertainment.isChecked()){
+                    selectedCategory = "entertainment";
+                } else if(radBtnHealth.isChecked()){
+                    selectedCategory = "health";
+                } else if(radBtnScience.isChecked()){
+                    selectedCategory = "science";
+                } else if(radBtnSports.isChecked()){
+                    selectedCategory = "sports";
+                } else if(radBtnTechnology.isChecked()){
+                    selectedCategory = "technology";
                 }
+
                 final String API = "&apiKey=9220d9a452ce4cdf9f7ad25b91fb20da";
                 final String KEYWORD_SEARCH = "q="+givenKeyWords;
                 final String LOCATION = "&country="+selectedLocation;
@@ -89,14 +87,16 @@ public class CategoryActivity extends AppCompatActivity {
 
                 url = URL_PREFIX + KEYWORD_SEARCH + LOCATION + CATEGORY + API;
 
+
                 Intent categoryPageIntent = new Intent(CategoryActivity.this,NewsListActivity.class);
+                //categoryPageIntent.putExtra(NewsListActivity.SIZE_KEY,strDataSize);
+
+                //categoryPageIntent.putExtra()
                 startActivity(categoryPageIntent);
 
 
-               /* Log.d("string Request",stringRequest+"");
-                queue.add(jsonObjectRequest);
-                Log.d("que",queue+"");
-*/
+
+
 
             }//end of onclick
         };

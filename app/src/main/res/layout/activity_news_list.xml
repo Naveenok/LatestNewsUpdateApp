@@ -7,10 +7,8 @@
     android:orientation="vertical"
     tools:context=".NewsListActivity">
 
-    <TextView
-        android:id="@+id/txtTest"
+    <ListView
+        android:id="@+id/listNews"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="TextView"
-        android:textSize="24sp" />
+        android:layout_height="match_parent" />
 </LinearLayout>
