@@ -1,5 +1,7 @@
 package com.naveen.latestnewsupdate;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -26,6 +29,7 @@ public class NewsListActivity extends AppCompatActivity {
     public static int dataSize;
     //public static TextView data;
     public static  ArrayList<HashMap<String, String>> data = new ArrayList<HashMap<String, String>>();
+    public String url;
     String[] titleArray  ;
     String[] imgUrlArray ;
     String[] descriptionArray ;
@@ -108,6 +112,15 @@ public class NewsListActivity extends AppCompatActivity {
 
             CustomAdapter cus = new CustomAdapter(NewsListActivity.this, dataList);
             listNews.setAdapter(cus);
+            listNews.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent, View view,
+                                        int position, long id) {
+                    url = dataList.get(+position).get(KEY_URL);
+                    Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    //i.putExtra("url", dataList.get(+position).get(KEY_URL));
+                    startActivity(i);
+                }
+            });
 
 
 
